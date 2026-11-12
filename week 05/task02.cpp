@@ -98,12 +98,22 @@ void removePlants(Node<std::pair<size_t, int>>*& plants, const int& dryness) {
     }
 }
 
-void print(Node<std::pair<size_t, int>>*& plants) {
+void print(Node<std::pair<size_t, int>>* plants) {
     Node<std::pair<size_t, int>>* current = plants;
     while (current != nullptr) {
-        std::cout << current->value.first << " " << current->value.second << std::endl;
         current = current->next;
     }
+}
+
+size_t size(Node<std::pair<size_t, int>>* plants) {
+Node<std::pair<size_t, int>>* it = plants;
+    size_t n = 0;
+    while(it != nullptr) {
+        n++;
+        it = it->next;
+    }
+
+    return n;
 }
 
 
@@ -132,8 +142,12 @@ int main() {
         }
 
         removePlants(l, 3);
+        std::cout << "Current size: " << size(l) << std::endl;
     }
+    
+    
 
+    std::cout << size(l) << std::endl;
 
     clear(l);
 

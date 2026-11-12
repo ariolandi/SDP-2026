@@ -78,9 +78,6 @@ void calculate(Node<int>*& numbers, Node<std::string>*& operators) {
         int x = numbers->value;
         pop(numbers);
 
-        std::cout << "x: " << x << " y: " << y << " " << op << std::endl;
-
-
         if(op == "+") {
             x += y;
         } else if (op == "-") {
@@ -90,7 +87,6 @@ void calculate(Node<int>*& numbers, Node<std::string>*& operators) {
         } else if (op == "/") {
             x /= y;
         }
-
 
         push(numbers, x);
     }
@@ -122,11 +118,6 @@ int main() {
     calculate(numbers, ops);
 
     std::cout << numbers->value << std::endl;
-
-    while(numbers) {
-        std::cout << numbers->value << std::endl;
-        pop(numbers);
-    }
 
 
     return 0;
